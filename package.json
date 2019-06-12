@@ -1,0 +1,26 @@
+{
+  "name": "mywebpack",
+  "version": "1.0.0",
+  "description": "> Let's do it!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle":"webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaiWenqi/mywebpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaiWenqi/mywebpack/issues"
+  },
+  "homepage": "https://github.com/DaiWenqi/mywebpack#readme",
+  "devDependencies": {
+    "file-loader": "^4.0.0",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.4"
+  }
+}
