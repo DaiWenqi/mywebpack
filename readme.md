@@ -3,8 +3,11 @@
 > Let's do it!
 
 > 使用 url-loader 打包图片
+
 npm i -D file-loader
+
 =webpack.config.js=
+
 `
     rules:[{
         test:/\.png$/,
@@ -18,7 +21,9 @@ npm i -D file-loader
         }]
     }]
 `
+
 =package.json=
+
 `
     {
         ...
@@ -35,15 +40,20 @@ npm i -D file-loader
         ...
     }
 `
+
 > 使用 file-loader 打包字体文件
+
 =webpack.config.js=
+
 `
     {
             test: /\.(eot|ttf|woff|woff2|svg)$/,
             use:['file-loader']
         }
 `
+
 > 打包scss（模块化css）
+
 `
 npm install 
 postcss-loader  
@@ -54,7 +64,9 @@ css-loader
 autoprefixer  
 --save-dev
 `
+
 =webpack.config.js=
+
 `
 ...
 {
