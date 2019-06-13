@@ -21,7 +21,20 @@ module.exports = {
             use:['style-loader','css-loader']
         },{
             test: /\.scss$/,
-            use:['style-loader','css-loader','sass-loader','postcss-loader']
+            use:[
+                'style-loader',
+                {
+                    loader:'css-loader',
+                    options:{
+                        //modules:true,    // 注意拼写 s 模块化css
+                        importLoaders:2 // 注意拼写 import
+                    }
+                },
+                'sass-loader'
+                ,'postcss-loader']
+        },{
+            test: /\.(eot|ttf|woff|woff2|svg)$/,
+            use:['file-loader']
         }]
     },
     output:{

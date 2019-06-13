@@ -5,9 +5,14 @@ import './index.scss';
 const oImage = new Image();
 oImage.src = picurl;
 
+const oDiv = document.createElement('div');
+oDiv.classList.add('iconfont','iconchengyunshangjichushuju')
+
 // 使用css
 oImage.classList.add('size');
 
 const eleRoot = document.querySelector('#root');
 
+
 eleRoot.appendChild(oImage);
+eleRoot.appendChild(oDiv);
