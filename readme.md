@@ -9,17 +9,17 @@ npm i -D file-loader
 =webpack.config.js=
 
 `
-    rules:[{
-        test:/\.png$/,
-        use:[{
-            name:'[name]-[hash].[ext]', // 打包后的名字加上hash
-            outputPath: 'images', // 打包后文件都放在images文件夹中
-            loader:'file-loader',
-            options:{
-            limit:'1024' // 小于1kb的就使用base64
-            }
-        }]
-    }]
+    rules:[  
+        test:/\.png$/,  
+        use:[{  
+            name:'[name]-[hash].[ext]', // 打包后的名字加上hash  
+            outputPath: 'images', // 打包后文件都放在images文件夹中  
+            loader:'file-loader',  
+            options:{  
+            limit:'1024' // 小于1kb的就使用base64  
+            }  
+        }]  
+    }]  
 `
 
 =package.json=
@@ -76,8 +76,9 @@ autoprefixer
 ...
     loader:'css-loader',
     options:{
-        modules:true,    // 注意拼写 s
+        modules:true,    // 注意拼写 
         importLoaders:2 // 注意拼写 import
     }
 ...
 `
+<div></div>
