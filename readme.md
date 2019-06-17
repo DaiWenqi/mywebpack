@@ -8,7 +8,7 @@ npm i -D file-loader
 
 =webpack.config.js=
 
-`
+```js
     rules:[  
         test:/\.png$/,  
         use:[{  
@@ -20,7 +20,7 @@ npm i -D file-loader
             }  
         }]  
     }]  
-`
+```
 
 =package.json=
 
