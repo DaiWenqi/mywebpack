@@ -6,7 +6,7 @@
 
 npm i -D file-loader
 
-=webpack.config.js=
+**webpack.config.js**
 
 ```js
     rules:[  
@@ -22,9 +22,9 @@ npm i -D file-loader
     }]  
 ```
 
-=package.json=
+**package.json**
 
-`
+```js
     {
         ...
         "browserslist": [
@@ -39,22 +39,22 @@ npm i -D file-loader
         },
         ...
     }
-`
+```
 
 > 使用 file-loader 打包字体文件
 
-=webpack.config.js=
+**webpack.config.js**
 
-`
+```js
     {
             test: /\.(eot|ttf|woff|woff2|svg)$/,
             use:['file-loader']
         }
-`
+```
 
 > 打包scss（模块化css）
 
-`
+```js
 npm install 
 postcss-loader  
 sass-loader 
@@ -63,11 +63,11 @@ style-loader
 css-loader
 autoprefixer  
 --save-dev
-`
+```
 
-=webpack.config.js=
+**webpack.config.js**
 
-`
+```js
 ...
 {
     test: /\.scss$/,
@@ -80,5 +80,4 @@ autoprefixer
         importLoaders:2 // 注意拼写 import
     }
 ...
-`
-<div></div>
+```
