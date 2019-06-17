@@ -1,8 +1,9 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 解构
 module.exports = {
     entry:{
-        main:'./src/index',// js 后缀可以省略
+        entry:'./src/index',// js 后缀可以省略
     },
     module:{
         rules:[{
@@ -40,5 +41,11 @@ module.exports = {
     output:{
         filename:'[name].js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            template:'./src/index.html'
+        }),
+        new CleanWebpackPlugin()
+    ]
 }

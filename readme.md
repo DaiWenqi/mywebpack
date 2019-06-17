@@ -80,4 +80,18 @@ autoprefixer
         importLoaders:2 // 注意拼写 import
     }
 ...
+
+> plugins : html-webpack-plugin, clean-webpack-plugin
+**安装**
+**webpack.config.js**
+```js
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
+    const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 注意这里的结构
+
+    ...
+    plugins: [new HtmlWebpackPlugin({
+         template:'./src/index.html'
+    }),new CleanWebpackPlugin()]
+    ...
 ```
+
