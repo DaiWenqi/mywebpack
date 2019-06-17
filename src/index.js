@@ -13,6 +13,6 @@ oImage.classList.add('size');
 
 const eleRoot = document.querySelector('#root');
 
-
+console.llg(123);
 eleRoot.appendChild(oImage);
 eleRoot.appendChild(oDiv);

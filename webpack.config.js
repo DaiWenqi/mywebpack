@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 解构
 module.exports = {
+    devtool:"source-map",
     entry:{
         entry:'./src/index',// js 后缀可以省略
     },
