@@ -2,9 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 解构
 module.exports = {
-    devtool:"source-map",
+    mode:'development',
+    devtool:"cheap-module-eval-source-map",
+    devServer:{
+        contentBase: path.join(__dirname, "dist")
+    },
     entry:{
-        entry:'./src/index',// js 后缀可以省略
+        main:'./src/index',// js 后缀可以省略
+        sub:'./src/index',// js 后缀可以省略
+       
     },
     module:{
         rules:[{
@@ -45,7 +51,7 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template:'./src/index.html'
+            template:'./src/index.html'// 模版
         }),
         new CleanWebpackPlugin()
     ]

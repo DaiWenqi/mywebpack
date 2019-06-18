@@ -1,8 +1,8 @@
-## webpack学习
+# webpack学习
 
 > Let's do it!
 
-> 使用 url-loader 打包图片
+## 使用 url-loader 打包图片
 
 npm i -D file-loader
 
@@ -41,7 +41,7 @@ npm i -D file-loader
     }
 ```
 
-> 使用 file-loader 打包字体文件
+## 使用 file-loader 打包字体文件
 
 **webpack.config.js**
 
@@ -52,7 +52,7 @@ npm i -D file-loader
         }
 ```
 
-> 打包scss（模块化css）
+## 打包scss（模块化css）
 
 ```js
 npm install 
@@ -81,7 +81,7 @@ autoprefixer
     }
 ...
 
-> plugins : html-webpack-plugin, clean-webpack-plugin
+## plugins : html-webpack-plugin, clean-webpack-plugin
 **安装**
 **webpack.config.js**
 ```js
@@ -94,4 +94,44 @@ autoprefixer
     }),new CleanWebpackPlugin()]
     ...
 ```
+
+## source-map 配置
+
+```js
+devtool:source-map
+```
+
+### development最佳
+devtool:`cheap-module-eval-source-map`
+### production 最佳
+devtoo:`cheap-module-source-map`
+
+## 自动化打包
+### watch
+**package.json**
+```js
+scripts: {
+    "watch": "webpack --watch"
+}
+```
+
+### devServer
+安装
+```js
+npm i -D webpack-dev-server
+```
+**package.json**
+```js
+scripts: {
+    "watch": "webpack-dev-server"
+}
+```
+**webpack.config.js**
+```js
+scripts: {
+    "contentBase": "./dist"
+}
+```
+### 自定义server( 使用中间件)
+ 参考[server.js](./server.js)
 
