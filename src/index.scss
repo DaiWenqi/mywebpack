@@ -1,6 +1,7 @@
 @import './sub.scss';// 内部引用 scss ，注意 webpack.config.js 里面的配置
 
 body{
+  background:yellow;
     .size{
         width:200px;
         height:200px;
@@ -30,3 +31,6 @@ $path:"./font";
     content: "\e780";
   }
   
+  .item:nth-child(odd){
+    background:purple;
+  }

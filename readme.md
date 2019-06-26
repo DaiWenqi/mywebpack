@@ -133,5 +133,83 @@ scripts: {
 }
 ```
 ### 自定义server( 使用中间件)
+安装
+```js
+npm i -D express webpack-dev-middleware
+```
  参考[server.js](./server.js)
+ ### hot module replacement( hmr)
+ 默认支持css的hmr，js需要自己进行配置。
+ ```js
+ devServer: {
+      contentBase: './dist',
++     hot: true
+    }
+
+     plugins: [
+         ...
+        new webpack.HotModuleReplacementPlugin()
+     ]
+ ```
+### 使用 Babel 处理 ES6 语法
+安装
+```js
+npm install --save-dev babel-loader @babel/core
+npm install @babel/preset-env --save-dev
+```
+package.json
+```js
+module: {
+  rules: [
+    { 
+        test: /\.js$/, 
+        exclude: /node_modules/, 
+        loader: "babel-loader",
+        options: ["@babel/preset-env"]
+    }
+  ]
+}
+```
+> 为了兼容 Promise Map ... 需要额外加入polyfill，7.40+已经启用，现在用 corejs 替代
+**法一 presets**
+```js
+{
+            test: /\.js$/, 
+            exclude: /node_modules/, 
+            loader: "babel-loader",
+            options:{
+                "presets": [
+                    ["@babel/preset-env",{
+                    "useBuiltIns": "usage",
+                    "corejs": 3 
+                }
+                ]]
+            }
+```
+需要使用的文件，最上面加上：
+```js
+import "@babel/polyfill";
+```
+**法二 plugins**
+安装
+```js
+npm install --save @babel/runtime-corejs2
+```
+.babelrc
+```js
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false
+      }
+    ]
+  ]
+}
+```
+
 
