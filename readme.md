@@ -239,3 +239,9 @@ class App extends Component {
 ReactDom.render(<App />, document.getElementById('root'));
 
 ```
+### Tree Shaking 
+配置
+webpack.config.js
+```js
+mode: production
+```

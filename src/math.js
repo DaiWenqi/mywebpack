@@ -1,7 +1,7 @@
-export default function math(){
+export const add = (a, b) => {
+    console.log(a + b);
+}
 
-    const div = document.createElement('div');
-    let num = 3;
-    document.querySelector('body').appendChild(div);
-        div.innerHTML = num++
+export const minus = (a, b) => {
+    console.log(a - b);
 }

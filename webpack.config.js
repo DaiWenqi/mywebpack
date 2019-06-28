@@ -98,12 +98,14 @@ module.exports = {
             //         ]
             //     ]
             // }
-            
         }]
     },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
+    },
+    optimization: {
+        usedExports: true
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,6 +1,7 @@
 {
   "name": "mywebpack",
   "version": "1.0.0",
+  "sideEffects":false,
   "description": "> Let's do it!",
   "main": "index.js",
   "scripts": {
