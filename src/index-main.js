@@ -1,11 +1,12 @@
+import 'core-js';
 
-console.log(Promise);
-const arr = [
-    new Promise(()=>{}),
-    new Promise(()=>{})
-];
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
-arr.map( (item) => {
-    console.log(item);
-});
+class App extends Component {
+    render() {
+        return <div>Hello World!</div>
+    }
+}
 
+ReactDom.render(<App />, document.getElementById('root'));

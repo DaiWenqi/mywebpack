@@ -211,5 +211,31 @@ npm install --save @babel/runtime-corejs2
   ]
 }
 ```
+### 使用 Babel 打包 react
+安装
+```js
+npm i react react-dom --save
+npm install --save-dev @babel/preset-react
+```
+配置
+```js
+{
+  "presets": ["@babel/preset-react"]
+}
+```
+代码
+```js
+import 'core-js';
 
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
+class App extends Component {
+    render() {
+        return <div>Hello World!</div>
+    }
+}
+
+ReactDom.render(<App />, document.getElementById('root'));
+
+```
