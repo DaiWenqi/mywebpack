@@ -9,8 +9,9 @@
 					"chrome": "58",
 					"ie": "8"
 				}
-			}
+			},
 		],
 		"@babel/preset-react"
-	]
+	],
+	"plugins":["@babel/plugin-syntax-dynamic-import"]
 }

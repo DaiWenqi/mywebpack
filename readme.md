@@ -245,3 +245,53 @@ webpack.config.js
 ```js
 mode: production
 ```
+sideEffects: 排除
+```js
+"sideEffects":["*.css"]
+```
+
+### webpack 按环境区分
+```js
+npm install webpack-merge -D
+```
+
+### Code Splitting
+webpack.config.js
+```js
+...
+optimization: {
+	splitChunks: {
+    	chunks: 'all'
+    }
+}
+...
+
+```
+默认值
+```js
+optimization: {
+    splitChunks: {
+      chunks: 'async',// 只对异步代码分割 all 
+      minSize: 30000,// 
+      maxSize: 0,
+      minChunks: 1,// 使用 1 次的模块进行分割
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,// 入口最多分割成 3 个
+      automaticNameDelimiter: '~',// 连接符号
+      automaticNameMaxLength: 30,
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,// 值越大，优先级越高
+          filename:'vendors.js'
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true，// 如果 使用的模块其他模块用过，就不会再忽略这个模块
+          filename:'common.js'
+        }
+    }
+}
+```

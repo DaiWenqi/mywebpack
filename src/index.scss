@@ -1,5 +1,7 @@
-@import './sub.scss';// 内部引用 scss ，注意 webpack.config.js 里面的配置
-
+/*
+// @import './sub.scss';
+// 内部引用 scss ，注意 webpack.config.js 里面的配置
+*/
 body{
   background:yellow;
     .size{
@@ -9,28 +11,3 @@ body{
         display: flex;
     }
 }
-
-$path:"./font";
-@font-face {font-family: "iconfont";
-    src: url('#{$path}/iconfont.eot?t=1560417286013'); /* IE9 */
-    src: url('#{$path}/iconfont.eot?t=1560417286013#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAVcAAsAAAAACkwAAAUNAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDIgqHOIZBATYCJAMUCwwABCAFhG0HgQob/wgRFaSDkP3hgJN70fyoaCj8yVrLYO4gNE8CytXI5NsDMb9wnf0+nqfuf+fur2aL3kxgUfMooAAbz0KIKISAElwfPi97Pz/DEkzlJDWXzBRKF8JsF9BROuFIn7YB0AABcPnNdjfbTYY4CjDJKHkJJOBIorDfkg6v+xsb0z2G8VisyzaXciZkw+jq0lxWV81tMmqyJN+OPPqDHFB6+PD/36v6X7aOhfMezwlRzOYaNjZgLBZNgJLu7QUpcCpSMe+jNgWrrsxA+7f12wQw4SwQycwqqIAaLJg+0Nbb1dEEdcMBdoIaqM3KgTtZkNVQQM2MMffAJ/v9fMQ9NVCgoGDverZzrUh9629BpSmplkqQ9vPBug8qYAcNSPNg4AVaFHYU2kCURSgYYPuZt/1vMTW1pzxzcE+DFv7hMaBggSjBDGcwPfRiA/6StAkadWBTwNgPNhWMQ6B6Qgw9uWMCNkgUkMNgpmvmP4CRdlOWZw3tDe0MdczouaJhi3b8CKG6SR+DA3o7ZvNhwYBq27qS9nQbqnQSBYUOVnpKl/HGg7pJAxN5i7R/sXDjpeheIGX8GUV6/mwD+WXwG+RJXfOLE+pFLv+nbwkNX4bo+ip5N0uveDZCp0rWkPXZ846RbbnFQNZLhysq2ekYicl6wIqOWwsba5wDVvyGV1iPH9lqI26S9VssK9ZPH/cXnh0R5z15aFS3aVinm1uzdds2m5fP9dq53pJs3Eimey91/R7fisN36T1beJ7zZcwmiyQHNx2yGg14tm/cHrfh74uWi+a8+Swz3lQEj1kQyhNC8kK+Q8x4Mgs8Kgeq1+tEszZzR5mFiDazTNeO2l/2FzfW3wR7GNUbfbM3QfS4K5ft3FtiUoJnVFbOCF4meqoqg2YsC5pZ1cimxLR5rp26YtTOze7Cyi5mxQTpJl2JtYvhtokJpe3Gq4BRnOPMOXb3OHHO2btE1JHr6alL27ad2S7qwZykusEJ9mY7Fz1IeukSHadyYpdpxWFkZjxnXPMPbqTE+baadTRwGL2JZfA0gz+Gm5cMLLB1mzG6pH+hrelNQ1PVWIGNWlWjQz9tFO+NHcJP6POdig0qjaQ51oJFoXVhAOa2jTQ3VDzCls0Zc831I+3i99B6zHJOWcoSZGs/r8bujYidOt7i0626kamI5HIiSsrgiaap7stM9Bmuudocjcmfy30u04QrKVcHMm9WO/0SOu/GJZq0dVXEydSgb+8Fy+dbfmE6FqZBLABL1ALmW/aeGcx/rNMRygJUiRp8Tk/DV/NN88TfatC/4ecbpcDYOgtaMxzBAGTlp1JJnGuhmjk76w9Khd/c0QoV8ErbTJ6GhUU2r/cxXcgGH3qTVQUFKjhBhRqeqBEDocMAkTCgRgpMBMi+/wQLs0BBWA3gZkgDAlMngIExbgCFqfuIJb4CBax9BiVMo1IICcQCnmjg8ho7ZxRkDSXwO1hBSQl3m/P2b9Q9sFJXZ9x/LNWmYV+2dvkLE5Y9rqlDH60pUIUifGrvwxAIzkIORVtMa+dlXdXQNy2C4jR7K8gaSsDvwApKKlnd5s7xv1H3wMrE0ED8H0u1u4PdYiOgL0MiDb1Lbx360DCngLJaKYJP9GHgBQLn8GkORVuYFbnzYsVlimpYzjfFx1j51xjJvqqIIZSwREGUeH4bTPreUzUsaWeF6cV6d/1l6BhXkqgxPShp03qzyhu6M6s1PplOD+mTnfVrsfDbaQIAAA==') format('woff2'),
-    url('#{$path}/iconfont.woff?t=1560417286013') format('woff'),
-    url('#{$path}/iconfont.ttf?t=1560417286013') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url('#{$path}/iconfont.svg?t=1560417286013#iconfont') format('svg'); /* iOS 4.1- */
-  }
-  
-  .iconfont {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  .iconchengyunshangjichushuju:before {
-    content: "\e780";
-  }
-  
-  .item:nth-child(odd){
-    background:purple;
-  }
