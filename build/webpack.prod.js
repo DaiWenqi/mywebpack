@@ -50,12 +50,22 @@ const prodConfig = {
             use: ['file-loader']
         },
         {
-            test: /\.js$/,
+            test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            use:[{
+                loader: 'babel-loader'
+            }
+            // ,{
+            //     loader: 'imports-loader?this=>window'
+            // }
+        ]
 
         }]
-    }
+    },
+    performance:false
 }
 
-module.exports = merge(commonConfig, prodConfig);
+module.exports = (env) => {
+    console.log('NODE_ENV: ', env.NODE_ENV); // 'production' 访问全局变量
+    return merge(commonConfig, prodConfig);
+}

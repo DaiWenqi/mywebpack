@@ -7,12 +7,22 @@ const devConfig = {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
     devServer: {
+        overlay: true,
         open: 'Chrome', // 默认打开谷歌浏览器
         contentBase: path.join(__dirname, 'dist'),
         overlay: true, // 当错误发生时，打包工具的报错信息展示在浏览器上
         port: 1018,
-        hot: true,
+        //hot: true,
         // hotOnly:true
+        proxy: {
+            '/react/api':{
+                target: 'http://www.dell-lee.com',
+                pathRewrite: {
+                    'header.json': 'demo.json'
+                }
+            }
+        },
+        historyApiFallback:true,
     },
     module: {
         rules: [{
@@ -47,15 +57,14 @@ const devConfig = {
             use: ['file-loader']
         },
         {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-
+            test: /\.jsx?$/,
+            include: path.resolve(__dirname, '../src'),
+            use: ['babel-loader','eslint-loader']
         }]
     },
     
     plugins: [
-        new webpack.HotModuleReplacementPlugin() // HMR
+        //new webpack.HotModuleReplacementPlugin() // HMR
     ]
 }
 

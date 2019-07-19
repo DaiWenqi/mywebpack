@@ -295,3 +295,18 @@ optimization: {
     }
 }
 ```
+
+### shim jquery
+使用插件, 当页面遇到 $ 符号的时候，会自动在头部引用 import $ from 'jqury';
+```js
+new webpack.ProvidePlugin({
+    $: 'jqurey'
+})
+```
+
+### 修改模块 this == window
+使用 imports-loader ,先安装。。
+配置
+```js
+loader: 'imports-loader?this=>window'
+```
